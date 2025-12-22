@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Meals() {
+export default function Meals({ btn }) {
   const [loading, setLoading] = useState(true);
   const [plats, setPlats] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -12,7 +12,7 @@ export default function Meals() {
     'burgers',
     'pizzas',
     'desserts',
-    'drinks',
+    // 'drinks',
     'best-foods',
     'ice-cream',
     'chocolates',
@@ -96,17 +96,28 @@ export default function Meals() {
     setTableNumber('');
     setQty(1);
 
-    console.log('PANIER LOCALSTORAGE :', updatedCart);
+    // console.log('PANIER LOCALSTORAGE :', updatedCart);
   };
 
   // ##########################################""""
 
   return (
     <>
+      <header className='bg-gray-600 shadow-md flex items-center gap-3 justify-center mb-6 '>
+        <img src='logo.png' alt='logo' className='h-30' />
+        <h3
+          className='
+text-2xl font-bold text-white  
+        '
+        >
+          Cisse Délice
+        </h3>
+        {btn}
+      </header>
       <div className='min-h-screen bg-gray-100 p-6'>
         {!loading && (
           <h1 className='text-3xl font-bold text-center mb-6'>
-            🍽️ Notre Menu Mélangé
+            Faite-vous plaisir avec nos délicieux plats !
           </h1>
         )}
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>

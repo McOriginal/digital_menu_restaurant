@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { GrValidate } from 'react-icons/gr';
+import { MdHomeWork } from 'react-icons/md';
 
 export default function OrderPage() {
   const orderData = JSON.parse(localStorage.getItem('restaurant_cart')) || [];
@@ -10,9 +11,10 @@ export default function OrderPage() {
     <div className='p-4'>
       <Link
         to='/admin_page'
-        className='bg-red-700 text-white flex justify-start w-24 font-bold items-center px-4 py-2 rounded-lg hover:bg-red-600 transition'
+        className='bg-red-700 text-white flex justify-start w-30 font-bold items-center px-4 py-2 rounded-lg hover:bg-red-600 transition'
       >
-        Accueil
+        <MdHomeWork />
+        <p className='ms-2'>Accueil</p>
       </Link>
       <h1 className='text-2xl font-bold mb-4 text-orange-600'>
         Commandes Disponible...
